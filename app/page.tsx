@@ -60,27 +60,27 @@ const steps = [
 
 export default function Home() {
   return (
-    <div className="px-6 py-16 text-white">
+    <div className="px-6 py-16 text-slate-900">
       {/* Hero */}
       <section className="text-center">
         <h1 className="text-9xl font-bold">
           Glenda
         </h1>
         <div className="flex gap-3 justify-center pt-6 text-sm font-medium tracking-widest uppercase">
-          <span className="text-red-400 border border-red-700/50 rounded-full px-4 py-1">
+          <span className="text-red-600 border border-red-300 rounded-full px-4 py-1">
             Non-Profit Project
           </span>
-          <span className="text-slate-300 border border-slate-600/50 rounded-full px-4 py-1">
+          <span className="text-slate-600 border border-slate-300 rounded-full px-4 py-1">
             Free & Open Source
           </span>
         </div>
-        <p className="text-2xl text-slate-300 max-w-2xl mx-auto font-light pt-10 leading-relaxed">
+        <p className="text-2xl text-slate-600 max-w-2xl mx-auto font-light pt-10 leading-relaxed">
           Say goodbye to bloat, hello to a smooth Windows.
         </p>
         <div className="flex gap-4 justify-center pt-10">
           <Link
             href="/playbook"
-            className="bg-red-700 hover:bg-red-600 transition-colors font-semibold px-8 py-3 rounded-lg"
+            className="bg-red-600 hover:bg-red-700 text-white transition-colors font-semibold px-8 py-3 rounded-lg"
           >
             Get the Playbook
           </Link>
@@ -88,7 +88,7 @@ export default function Home() {
             href="https://github.com/Sapphxre5261/GlendaOS"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-slate-500 hover:border-white transition-colors px-8 py-3 rounded-lg text-slate-200"
+            className="border border-slate-300 hover:border-slate-500 bg-white/60 transition-colors px-8 py-3 rounded-lg text-slate-700"
           >
             GitHub
           </Link>
@@ -100,10 +100,10 @@ export default function Home() {
         {pillars.map((p) => (
           <div
             key={p.title}
-            className="bg-black/40 backdrop-blur-md border border-slate-800/60 rounded-xl p-6 hover:border-red-800/60 transition-colors"
+            className="bg-white/70 backdrop-blur-md border border-slate-200 shadow-sm rounded-xl p-6 hover:border-red-300 transition-colors"
           >
-            <h3 className="text-xl font-bold text-red-400">{p.title}</h3>
-            <p className="text-sm text-slate-400 pt-3 leading-relaxed">
+            <h3 className="text-xl font-bold text-red-600">{p.title}</h3>
+            <p className="text-sm text-slate-600 pt-3 leading-relaxed">
               {p.description}
             </p>
           </div>
@@ -117,18 +117,18 @@ export default function Home() {
           {whatItDoes.map((w) => (
             <div
               key={w.name}
-              className="bg-black/40 backdrop-blur-md border border-slate-800/60 rounded-xl p-8 hover:border-red-800/60 transition-colors"
+              className="bg-white/70 backdrop-blur-md border border-slate-200 shadow-sm rounded-xl p-8 hover:border-red-300 transition-colors"
             >
-              <span className="text-xs font-medium tracking-widest uppercase text-slate-400">
+              <span className="text-xs font-medium tracking-widest uppercase text-slate-600">
                 {w.tag}
               </span>
               <h3 className="text-2xl font-bold pt-2">{w.name}</h3>
-              <p className="text-sm text-slate-400 pt-3 leading-relaxed">
+              <p className="text-sm text-slate-600 pt-3 leading-relaxed">
                 {w.description}
               </p>
               <Link
                 href={w.href}
-                className="inline-block text-red-400 hover:text-red-300 transition-colors text-sm font-semibold pt-4"
+                className="inline-block text-red-600 hover:text-red-700 transition-colors text-sm font-semibold pt-4"
               >
                 {w.link} →
               </Link>
@@ -144,11 +144,11 @@ export default function Home() {
           {steps.map((s) => (
             <div
               key={s.step}
-              className="bg-black/40 backdrop-blur-md border border-slate-800/60 rounded-xl p-8"
+              className="bg-white/70 backdrop-blur-md border border-slate-200 shadow-sm rounded-xl p-8"
             >
               <div className="text-5xl font-bold text-red-700/70">{s.step}</div>
               <h3 className="text-lg font-bold pt-4">{s.title}</h3>
-              <p className="text-sm text-slate-400 pt-2 leading-relaxed">
+              <p className="text-sm text-slate-600 pt-2 leading-relaxed">
                 {s.description}
               </p>
             </div>

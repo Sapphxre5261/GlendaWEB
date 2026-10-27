@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="th">
       {/* 3. นำ lexend.className มาใส่ร่วมกับคลาสอื่นอย่างถูกต้อง */}
-      <body className={`${lexend.className} bg-custom-hero text-slate-100 min-h-screen relative`}>
+      <body className={`${lexend.className} text-slate-900 min-h-screen relative`}>
         
 
         {/* เรียกใช้ Navbar ให้แสดงทุกหน้า */}

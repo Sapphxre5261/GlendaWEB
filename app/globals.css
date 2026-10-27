@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --foreground: #171717;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -10,20 +10,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground: #ededed;
-  }
-}
-
 body {
-
-  background-image: url('/glenda-bg2.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(239, 68, 68, 0.12), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(239, 68, 68, 0.1), transparent 45%);
   background-attachment: fixed;
-  
+
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;

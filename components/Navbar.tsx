@@ -1,10 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { logout } from "@/app/login/actions";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  if (pathname === "/login") return null;
+
   return (
-    // ปรับเปลี่ยน bg-stlte-700 เป็น bg-slate-950/60 หรือ bg-black/40 (เข้มขึ้น สวยหรู แต่ยังเห็นฉากหลังเบลอ)
-    <nav className="bg-black/40 text-white w-full sticky top-0 z-50 backdrop-blur-md border-b border-slate-800/40 px-4">
+    <nav className="bg-white/70 text-slate-900 w-full sticky top-0 z-50 backdrop-blur-md border-b border-slate-200 px-4">
 
       <div className="flex justify-between items-center max-w-7xl w-full mx-auto py-2">
 
@@ -14,24 +20,23 @@ export default function Navbar() {
             alt="โลโก้ SVG"
             width={50}
             height={50}
-            className="text-white"
           />
-          <div className="text-white font-sans text-xl font-bold">
+          <div className="text-slate-900 font-sans text-xl font-bold">
             Glenda
           </div>
         </div>
 
-        <div className="flex gap-6 text-neutral-300 font-medium text-base">
-          <Link href="/" className="hover:text-white transition-colors">
+        <div className="flex gap-6 text-slate-600 font-medium text-base">
+          <Link href="/" className="hover:text-red-600 transition-colors">
             Home
           </Link>
-          <Link href="/playbook" className="hover:text-white transition-colors">
+          <Link href="/playbook" className="hover:text-red-600 transition-colors">
             Playbook
           </Link>
-          <Link href="/programs" className="hover:text-white transition-colors">
+          <Link href="/programs" className="hover:text-red-600 transition-colors">
             Programs
           </Link>
-          <Link href="/docs" className="hover:text-white transition-colors">
+          <Link href="/docs" className="hover:text-red-600 transition-colors">
             Documentation
           </Link>
         </div>
@@ -49,7 +54,7 @@ export default function Navbar() {
                 alt="GitHub Icon"
                 width={30}
                 height={30}
-                className="text-white"
+                className="invert"
               />
             </Link>
           </div>
@@ -66,10 +71,18 @@ export default function Navbar() {
                 alt="Discord Icon"
                 width={30}
                 height={30}
-                className="text-white"
               />
             </Link>
           </div>
+
+          <form action={logout}>
+            <button
+              type="submit"
+              className="text-sm font-medium text-slate-600 border border-slate-300 hover:border-red-400 hover:text-red-600 transition-colors px-4 py-1.5 rounded-lg"
+            >
+              Logout
+            </button>
+          </form>
         </div>
 
       </div>
